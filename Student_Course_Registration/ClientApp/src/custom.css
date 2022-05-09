@@ -1,0 +1,132 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+
+
+body, html {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+    background-color: lightblue;
+}
+
+.container {
+    width: 950px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form {
+    background-color: #FFF;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0px;
+    text-align: center;
+    padding: 30px;
+}
+
+form.register {
+    display: inline-block;
+}
+
+label {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    color: #333;
+    height: 20px;
+    width: 130px;
+    margin-top: 25px;
+    margin-left: 10px;
+    text-align: right;
+    clear: both;
+    float: left;
+    margin-right: 15px;
+}
+
+input, textarea {
+    height: 26px;
+    width: 300px;
+    border: 1px solid #c1bebe;
+    margin-top: 20px;
+    float: left;
+    border-radius: 4px;
+}
+
+    input[type="submit"] {
+        width: 150px;
+        margin: 20px 0px;
+        left: 155px;
+        padding: 5px;
+        height: 30px;
+        cursor: pointer;
+        position: relative;
+        clear: left;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #0089b5;
+            color: #fff;
+        }
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 5px 10px;
+}
+
+table#data_table {
+    margin: 0 auto;
+}
+
+textarea {
+    display: block;
+    height: 100px;
+}
+
+select {
+    height: 30px;
+    width: 300px;
+    border: 1px solid #c1bebe;
+    float: none;
+    border-radius: 4px;
+    margin: 0;
+}
+
+.select_form {
+    display: flex;
+}
+
+    .select_form label {
+        margin: 5px 0px;
+        text-align: center;
+        width: 100%;
+    }
+
+form#select_form {
+    display: inline-block;
+}
+
+#select_form input[type="submit"] {
+    left: 285px;
+}
