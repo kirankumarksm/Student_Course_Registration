@@ -1,6 +1,6 @@
 import React from "react";
 // import * as Yup from "yup";
-import {Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, FormControl, Button } from "react-bootstrap";
 
 const CourseForm = (props) => {
@@ -20,7 +20,7 @@ const CourseForm = (props) => {
             <Formik {...props}>
                 <Form>
                     <FormGroup>
-                    <label>Course Name</label>
+                        <label>Course Name</label>
 
                         <Field name="CourseName" type="text"
                             className="form-control" />
@@ -39,9 +39,9 @@ const CourseForm = (props) => {
                             className="d-block invalid-feedback"
                             component="span"
                         />
-                        </FormGroup>
-                   
-                <br/><br/>
+                    </FormGroup>
+
+                    <br /><br />
                     <Button variant="danger" size="lg"
                         block="block" type="submit">
                         {props.children}

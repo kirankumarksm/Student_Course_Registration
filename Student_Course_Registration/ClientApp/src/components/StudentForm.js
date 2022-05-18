@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import * as Yup from "yup";
-import {Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, Button } from "react-bootstrap";
 
 const StudentForm = (props) => {
-    //const validationSchema = Yup.object().shape({
-    //    name: Yup.string().required("Required"),
-    //    email: Yup.string()
-    //        .email("You have enter an invalid email address")
-    //        .required("Required"),
-    //    rollno: Yup.number()
-    //        .positive("Invalid roll number")
-    //        .integer("Invalid roll number")
-    //        .required("Required"),
-    //});
+    const [date, setDate] = useState([]);
+
+    function getDate() {
+        var date = new Date();
+        setDate(date);
+    }
     console.log(props);
     return (
+        //<Link className="edit-link"
+        //    to={"/create-course/"}>
+        //    Create New Course
+        //</Link>
+
         <div className="form-wrapper">
             <Formik {...props}>
                 <Form>
                     <FormGroup>
-                    <label>First Name</label>
+                        <label>First Name</label>
 
                         <Field name="FirstName" type="text"
                             className="form-control" />
@@ -42,24 +43,24 @@ const StudentForm = (props) => {
                     </FormGroup>
                     <FormGroup>
                         <label>DOB</label>
-                        <Field name="DOB" type="date"
+                        <Field name="DOB" type="date" value={date}
                             className="form-control" />
                         <ErrorMessage
                             name="Dob"
                             className="d-block invalid-feedback"
                             component="span"
                         />
-                </FormGroup>
-                <FormGroup>
-                    <label>Contact No</label>
-                    <Field name="ContactNo" type="Number"
-                        className="form-control" />
-                    <ErrorMessage
-                        name="Number"
-                        className="d-block invalid-feedback"
-                        component="span"
-                    />
-                </FormGroup><br/><br/>
+                    </FormGroup>
+                    <FormGroup>
+                        <label>Contact No</label>
+                        <Field name="ContactNo" type="Number"
+                            className="form-control" />
+                        <ErrorMessage
+                            name="Number"
+                            className="d-block invalid-feedback"
+                            component="span"
+                        />
+                    </FormGroup><br /><br />
                     <Button variant="danger" size="lg"
                         block="block" type="submit">
                         {props.children}

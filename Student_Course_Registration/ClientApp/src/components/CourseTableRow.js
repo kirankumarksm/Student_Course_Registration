@@ -3,17 +3,18 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const StudentTableRow = (props) => {
-    const { Pk_StudentId, FirstName, LastName } = props.obj;
+const CourseTableRow = (props) => {
+    debugger
+    const { Pk_CourseId, CourseName, CourseDetails } = props.obj;
 
-    const deleteStudent = () => {
-        alert(Pk_StudentId)
+    const deleteCourse = () => {
+        alert(Pk_CourseId)
         axios
             .delete(
-                "http://localhost:44354/api/student/DeleteStudent/" + Pk_StudentId)
+                "http://localhost:44354/api/Course/DeleteCourse/" + Pk_CourseId)
             .then((res) => {
                 if (res.status === 200) {
-                    alert("Student successfully deleted");
+                    alert("Course successfully deleted");
                     window.location.reload();
                 } else Promise.reject();
             })
@@ -23,13 +24,13 @@ const StudentTableRow = (props) => {
     return (
         <tr>
             <td>  <Link className="edit-link"
-                to={"/edit-student/" + Pk_StudentId}>
+                to={"/edit-course/" + Pk_CourseId}>
                 Edit
             </Link></td>
-            <td>{FirstName}</td>
-            <td>{LastName}</td>
+            <td>{CourseName}</td>
+            <td>{CourseDetails}</td>
             <td>
-                <Button onClick={deleteStudent}
+                <Button onClick={deleteCourse}
                     size="sm" variant="danger">
                     Delete
                 </Button>
@@ -38,4 +39,4 @@ const StudentTableRow = (props) => {
     );
 };
 
-export default StudentTableRow;
+export default CourseTableRow;
